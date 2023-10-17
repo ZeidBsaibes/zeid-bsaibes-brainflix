@@ -1,0 +1,81 @@
+// Imported Font Files
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  src: url("../../assets/font/otf/AvenirNextLTPro-Regular.otf")
+    format("opentype");
+  src: url("../../assets/font/ttf/AvenirNextLTPro.ttf") format(("truetype"));
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  src: url("../../assets/font/otf/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../../assets/font/ttf/AvenirNextLTProBold.ttf") format(("truetype"));
+  font-weight: bold;
+  font-style: normal;
+}
+
+// Typography Mixins
+
+$avenir: "Avenir Next LT Pro";
+
+// desktop typography mixins
+
+@mixin page-header-desktop {
+  font-family: $avenir;
+  font-size: 2.02625rem;
+  line-height: 2.75rem;
+  font-weight: bold;
+}
+
+@mixin section-header-desktop {
+  font-family: $avenir;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+}
+
+@mixin body-copy-desktop {
+  font-family: $avenir;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: normal;
+}
+
+@mixin labels-button-desktop {
+  font-family: $avenir;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+}
+
+//mobile typography mixins
+
+@mixin page-header-mobile {
+  font-family: $avenir;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+}
+
+@mixin section-header-mobile {
+  font-family: $avenir;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+}
+
+@mixin body-copy-mobile {
+  font-family: $avenir;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: normal;
+}
+
+@mixin labels-button-mobile {
+  font-family: $avenir;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+}
