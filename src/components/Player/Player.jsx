@@ -1,8 +1,9 @@
 import React from "react";
+import "./Player.scss";
 
-function MainVideo() {
+function Player() {
   return (
-    <video controls width="250">
+    <video class="main-video" controls width="250">
       <source src="/media/cc0-videos/flower.webm" type="video/webm" />
       <source src="/media/cc0-videos/flower.mp4" type="video/mp4" />
       Download the
@@ -14,4 +15,4 @@ function MainVideo() {
   );
 }
 
-export default MainVideo;
+export default Player;
