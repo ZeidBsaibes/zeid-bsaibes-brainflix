@@ -1,3 +1,8 @@
-.main-video {
-  width: 100%;
+.player {
+  width: 50%;
+  margin: auto auto;
+
+  &__screen {
+    width: 100%;
+  }
 }

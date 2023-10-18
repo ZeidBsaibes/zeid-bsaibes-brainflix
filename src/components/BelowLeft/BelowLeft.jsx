@@ -2,12 +2,12 @@ import React from "react";
 import VideoMeta from "../VideoMeta/VideoMeta";
 import Comments from "../Comments/Comments";
 
-function BelowLeft() {
+function BelowLeft({ activeVideoObject }) {
   return (
-    <div class="below-left">
+    <div className="below-left">
       BelowLeft
-      <VideoMeta />
-      <Comments />
+      <VideoMeta activeVideoObject={activeVideoObject} />
+      <Comments activeVideoComments={activeVideoObject.comments} />
     </div>
   );
 }

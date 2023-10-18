@@ -4,15 +4,17 @@ import VideoCreator from "../VideoCreator/VideoCreator";
 import VideoDate from "../VideoDate/VideoDate";
 import VideoViews from "../VideoViews/VideoViews";
 import VideoLikes from "../VideoLikes/VideoLikes";
+import VideoDescription from "../VideoDescription/VideoDescription";
 
-function VideoMeta() {
+function VideoMeta({ activeVideoObject }) {
   return (
     <div>
-      <VideoTitle />
-      <VideoCreator />
-      <VideoDate />
-      <VideoViews />
-      <VideoLikes />
+      <VideoTitle title={activeVideoObject.title} />
+      <VideoCreator creator={activeVideoObject.channel} />
+      <VideoDate date={activeVideoObject.timestamp} />
+      <VideoViews views={activeVideoObject.views} />
+      <VideoLikes likes={activeVideoObject.likes} />
+      <VideoDescription description={activeVideoObject.description} />
     </div>
   );
 }

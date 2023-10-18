@@ -1,13 +1,24 @@
 import React from "react";
+import "./VideoThumbnail.scss";
 
-function VideoThumbnail() {
+function VideoThumbnail({ imageSrc, title, channel, id, updateActiveVideo }) {
   return (
-    <div>
-      VideoThumbnail
-      <img src="https://placehold.co/100x50" alt="" />
-      <h3>Video Title</h3>
-      <p>Video Creator</p>
-    </div>
+    <button
+      onClick={() => {
+        updateActiveVideo(id);
+      }}
+    >
+      <div>
+        <img
+          src={imageSrc}
+          alt={`a video cover for a video entitled ${title}`}
+          className="videothumbnail__image"
+        />
+        <h3>{title}</h3>
+        <p>{channel}</p>
+        <p>{id}</p>
+      </div>
+    </button>
   );
 }
 

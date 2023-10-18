@@ -1,7 +1,11 @@
 import React from "react";
 
-function VideoCreator() {
-  return <div>VideoCreator</div>;
+function VideoCreator({ creator }) {
+  return (
+    <div>
+      <p>By {creator}</p>
+    </div>
+  );
 }
 
 export default VideoCreator;

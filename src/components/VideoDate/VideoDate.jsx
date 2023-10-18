@@ -1,7 +1,11 @@
 import React from "react";
 
-function VideoDate() {
-  return <div>VideoDate</div>;
+function VideoDate({ date }) {
+  return (
+    <div>
+      <p>{date}</p>
+    </div>
+  );
 }
 
 export default VideoDate;

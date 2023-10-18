@@ -1,7 +1,11 @@
 import React from "react";
 
-function VideoViews() {
-  return <div>VideoViews</div>;
+function VideoViews({ views }) {
+  return (
+    <div>
+      <p>{views}</p>
+    </div>
+  );
 }
 
 export default VideoViews;
