@@ -1,5 +1,4 @@
-@import "./styles/partials/resets";
-@import "./styles/partials/colours";
-@import "./styles/partials/globals";
-@import "./styles/partials/layout";
-@import "./styles/partials/typography";
+@use "./styles/partials/colours";
+@use "./styles/partials/globals";
+@use "./styles/partials/layout";
+@use "./styles/partials/typography";
