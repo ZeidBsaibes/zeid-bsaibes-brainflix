@@ -1,0 +1,7 @@
+@use "../../styles/partials/typography" as *;
+
+.video-date {
+  &__text {
+    @include video-meta-text;
+  }
+}

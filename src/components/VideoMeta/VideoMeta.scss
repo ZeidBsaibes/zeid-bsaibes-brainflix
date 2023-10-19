@@ -1,0 +1,13 @@
+.video-meta {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  &__creator-date {
+    width: 40%;
+  }
+
+  &__views-likes {
+    width: 40%;
+  }
+}

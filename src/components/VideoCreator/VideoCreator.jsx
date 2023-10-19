@@ -1,9 +1,10 @@
 import React from "react";
+import "./VideoCreator.scss";
 
 function VideoCreator({ creator }) {
   return (
-    <div>
-      <p>By {creator}</p>
+    <div className="video-creator">
+      <p className="video-creator__text">By {creator}</p>
     </div>
   );
 }

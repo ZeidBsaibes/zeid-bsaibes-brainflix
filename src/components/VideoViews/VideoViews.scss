@@ -1,0 +1,12 @@
+@use "../../styles/partials/typography" as *;
+
+.video-views {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  &__text {
+    @include video-meta-text;
+    padding-bottom: 0.3rem;
+    margin-left: 0.5rem;
+  }
+}

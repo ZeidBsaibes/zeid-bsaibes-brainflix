@@ -1,6 +1,7 @@
 import React from "react";
 import VideoMeta from "../VideoMeta/VideoMeta";
 import Comments from "../Comments/Comments";
+import "./BelowLeft.scss";
 
 function BelowLeft({ activeVideoObject }) {
   return (

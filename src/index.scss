@@ -1,13 +1,11 @@
 @import "./styles/partials/resets";
 @import "./styles/partials/layout";
+@import "./styles/partials/globals";
+@import "./styles/partials/typography";
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: $avenir;
 }
 
 code {

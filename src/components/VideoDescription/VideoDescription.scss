@@ -1,0 +1,9 @@
+@use "../../styles/partials/colours" as *;
+
+.videodescription {
+  border-top: 2px solid $secondary-mercury;
+  &__text {
+    font-size: 1.3rem;
+    line-height: 0.5rem;
+  }
+}

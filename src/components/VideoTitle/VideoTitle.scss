@@ -1,11 +1,13 @@
 @use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colours" as *;
 
 .video-title {
   display: flex;
   justify-content: center;
-
+  border-bottom: 2px solid $secondary-mercury;
   &__title {
     text-align: left;
     @include page-header-desktop;
+    font-weight: bold;
   }
 }
