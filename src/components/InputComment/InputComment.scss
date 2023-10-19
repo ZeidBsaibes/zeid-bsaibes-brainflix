@@ -1,0 +1,16 @@
+@use "../../styles/partials/globals" as *;
+
+.inputcomment {
+  &__input {
+    @include input-style;
+    width: 100%;
+    height: 8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__input::placeholder {
+    @include input-placeholder-style;
+    align-self: flex-start;
+  }
+}

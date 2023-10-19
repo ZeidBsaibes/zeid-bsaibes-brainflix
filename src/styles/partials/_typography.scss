@@ -18,6 +18,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  src: url("../../assets/font/otf/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("../../assets/font/ttf/AvenirNextLTProDemi.ttf") format(("truetype"));
+  font-weight: 600;
+  font-style: normal;
+}
+
 // Typography Mixins
 
 $avenir: "Avenir Next LT Pro";
@@ -84,5 +92,10 @@ $avenir: "Avenir Next LT Pro";
 
 @mixin video-meta-text {
   color: $primary-silver;
+  font-size: 1.2rem;
+}
+
+@mixin demi-weight-item {
+  font-weight: 600;
   font-size: 1.2rem;
 }

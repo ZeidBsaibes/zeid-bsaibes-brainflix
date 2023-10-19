@@ -1,0 +1,17 @@
+@use "../partials/colours" as *;
+@use "../partials/typography" as *;
+
+@mixin input-style {
+  width: 100%;
+  height: 3.4rem;
+  border-radius: 5px;
+  border: 2px solid $secondary-mercury;
+  background-color: $secondary-white;
+}
+
+@mixin input-placeholder-style {
+  @include body-copy-desktop;
+  font-size: 1.1rem;
+  color: $primary-black;
+  text-align: left;
+}
