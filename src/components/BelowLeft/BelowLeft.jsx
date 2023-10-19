@@ -5,7 +5,6 @@ import Comments from "../Comments/Comments";
 function BelowLeft({ activeVideoObject }) {
   return (
     <div className="below-left">
-      BelowLeft
       <VideoMeta activeVideoObject={activeVideoObject} />
       <Comments activeVideoComments={activeVideoObject.comments} />
     </div>

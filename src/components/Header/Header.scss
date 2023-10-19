@@ -1,7 +1,17 @@
 @use "../../styles/partials/typography" as *;
+@use "../../styles/partials/layout" as *;
 
 .header {
   display: flex;
   flex-direction: column;
+  margin-bottom: 1.5rem;
+
+  align-items: center;
   @include page-header-desktop;
+
+  @include tablet-breakpoint {
+  }
+
+  @include desktop-breakpoint {
+  }
 }

@@ -1,0 +1,11 @@
+@use "../../styles/partials/typography" as *;
+
+.video-title {
+  display: flex;
+  justify-content: center;
+
+  &__title {
+    text-align: left;
+    @include page-header-desktop;
+  }
+}

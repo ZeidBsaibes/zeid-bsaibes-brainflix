@@ -1,17 +1,15 @@
 import React from "react";
 import "./Header.scss";
-import Logo from "../Logo/Logo";
-import SearchForm from "../SearchForm/SearchForm";
-import Avatar from "../Avatar/Avatar";
+
+import HeaderLogo from "../HeaderLogo/HeaderLogo";
+import HeaderForm from "../HeaderForm/HeaderForm";
 
 function Header() {
   return (
-    <>
-      <div className="header">this is the header</div>
-      <Logo />
-      <SearchForm />
-      <Avatar />
-    </>
+    <div className="header">
+      <HeaderLogo />
+      <HeaderForm />
+    </div>
   );
 }
 
