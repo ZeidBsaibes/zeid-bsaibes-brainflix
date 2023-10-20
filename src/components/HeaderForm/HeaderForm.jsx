@@ -12,9 +12,16 @@ function HeaderForm() {
     <div className="header-form">
       <div className="header-form__top">
         <FormInput />
+        <div className="header-form__mobile-avatar">
+          <Avatar image={image} />
+        </div>
+      </div>
+      <div className="header-form__button">
+        <Button text="UPLOAD" icon={uploadIcon} />
+      </div>
+      <div className="header-form__desktop-avatar">
         <Avatar image={image} />
       </div>
-      <Button text="UPLOAD" icon={uploadIcon} />
     </div>
   );
 }

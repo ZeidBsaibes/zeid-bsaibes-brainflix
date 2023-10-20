@@ -1,13 +1,49 @@
+@use "../../styles/partials/layout" as *;
+
 .header-form {
   display: flex;
   flex-direction: column;
-
+  justify-content: center;
+  align-items: center;
   width: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
 
+  @include tablet-breakpoint {
+    flex-direction: row;
+    justify-content: center;
+  }
+
   &__top {
+    width: 100%;
     display: flex;
     gap: 1.5rem;
+    max-width: 30rem;
+
+    @include tablet-breakpoint {
+      margin: auto auto;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    // max-width: 25rem;
+
+    @include tablet-breakpoint {
+      max-width: 18.75rem;
+    }
+  }
+
+  &__desktop-avatar {
+    display: none;
+    @include tablet-breakpoint {
+      display: flex;
+    }
+  }
+  &__mobile-avatar {
+    display: flex;
+    @include tablet-breakpoint {
+      display: none;
+    }
   }
 }

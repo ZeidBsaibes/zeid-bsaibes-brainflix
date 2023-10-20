@@ -5,13 +5,16 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 1.5rem;
-
   align-items: center;
+  background-color: green;
   @include page-header-desktop;
 
   @include tablet-breakpoint {
+    background-color: red;
+    flex-direction: row;
   }
 
   @include desktop-breakpoint {
+    background-color: blue;
   }
 }

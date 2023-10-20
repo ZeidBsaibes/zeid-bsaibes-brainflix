@@ -4,13 +4,15 @@
 
 .form-input {
   display: flex;
-  width: 82%;
+  width: 100%;
   justify-content: center;
   margin-bottom: 1rem;
 
   &__field {
     @include input-style;
     @include input-placeholder-style;
+    width: 100%;
+    // max-width: 22rem;
   }
 
   &__field::placeholder {
