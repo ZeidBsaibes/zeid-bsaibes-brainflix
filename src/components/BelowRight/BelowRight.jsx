@@ -1,4 +1,5 @@
 import React from "react";
+import "./BelowRight.scss";
 import VideoThumbnail from "../VideoThumbnail/VideoThumbnail";
 
 function BelowRight({ videos, updateActiveVideo, activeVideoId }) {
@@ -6,8 +7,8 @@ function BelowRight({ videos, updateActiveVideo, activeVideoId }) {
     return video.id !== activeVideoId;
   });
   return (
-    <div>
-      <h3>Next Videos</h3>
+    <div className="below-right">
+      <h3 className="below-right__title">NEXT VIDEOS</h3>
       {videosExcludingActive.map((video) => {
         return (
           <VideoThumbnail

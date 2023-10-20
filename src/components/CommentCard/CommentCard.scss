@@ -1,0 +1,43 @@
+@use "../../styles/partials/colours" as *;
+@use "../../styles/partials/typography" as *;
+
+.commentcard {
+  display: flex;
+  margin-top: 2rem;
+
+  border-top: 1px solid $secondary-mercury;
+
+  &__left {
+    width: 20%;
+    padding-top: 1.4rem;
+  }
+
+  &__right {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    &--top {
+      display: flex;
+      justify-content: space-between;
+    }
+    &--bottom {
+      margin-top: 0;
+    }
+  }
+
+  &__author {
+    @include demi-weight-item;
+    width: auto;
+  }
+
+  &__date {
+    width: auto;
+    @include video-meta-text;
+  }
+
+  &__comment {
+    margin: 0;
+    @include description-comments;
+  }
+}

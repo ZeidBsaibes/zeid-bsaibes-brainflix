@@ -8,8 +8,10 @@ function InputComment() {
         action="
      "
       >
-        <label htmlFor="newCommentInput">JOIN THE CONVERSATION</label>
-        <input
+        <label htmlFor="newCommentInput" className="inputcomment__label">
+          JOIN THE CONVERSATION
+        </label>
+        <textarea
           type="text"
           name="newCommentInput"
           id="newCommentInput"

@@ -3,22 +3,26 @@ import "./VideoThumbnail.scss";
 
 function VideoThumbnail({ imageSrc, title, channel, id, updateActiveVideo }) {
   return (
-    <button
-      onClick={() => {
-        updateActiveVideo(id);
-      }}
-    >
-      <div>
-        <img
-          src={imageSrc}
-          alt={`a video cover for a video entitled ${title}`}
-          className="videothumbnail__image"
-        />
-        <h3>{title}</h3>
-        <p>{channel}</p>
-        <p>{id}</p>
-      </div>
-    </button>
+    <div className="videothumbnail">
+      <button
+        onClick={() => {
+          updateActiveVideo(id);
+        }}
+      >
+        <div className="videothumbnail__left">
+          <img
+            src={imageSrc}
+            alt={`a video cover for a video entitled ${title}`}
+            className="videothumbnail__image"
+          />
+        </div>
+
+        <div className="videothumbnail__right">
+          <h3 className="videothumbnail__title">{title}</h3>
+          <p className="videothumbnail__creator">{channel}</p>
+        </div>
+      </button>
+    </div>
   );
 }
 

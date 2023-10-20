@@ -1,6 +1,23 @@
 .videothumbnail {
+  display: flex;
+
+  &__left {
+    width: auto;
+  }
+
+  &__right {
+    width: auto;
+  }
+
   &__image {
     height: 100px;
     width: 100px;
+    border-radius: 5px;
+  }
+
+  &__title {
+  }
+
+  &__creator {
   }
 }

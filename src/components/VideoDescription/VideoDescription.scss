@@ -1,9 +1,9 @@
 @use "../../styles/partials/colours" as *;
+@use "../../styles/partials/typography" as *;
 
 .videodescription {
   border-top: 2px solid $secondary-mercury;
   &__text {
-    font-size: 1.3rem;
-    line-height: 1.8rem;
+    @include description-comments;
   }
 }

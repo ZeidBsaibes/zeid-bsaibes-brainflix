@@ -1,0 +1,12 @@
+@use "../../styles/partials/typography" as *;
+
+.below-right {
+  padding: 1.5rem;
+  &__title {
+    @include video-meta-text;
+    font-weight: 600;
+  }
+
+  &__cards {
+  }
+}

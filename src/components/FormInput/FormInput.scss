@@ -7,8 +7,10 @@
   width: 82%;
   justify-content: center;
   margin-bottom: 1rem;
+
   &__field {
     @include input-style;
+    @include input-placeholder-style;
   }
 
   &__field::placeholder {

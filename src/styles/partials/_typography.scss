@@ -99,3 +99,8 @@ $avenir: "Avenir Next LT Pro";
   font-weight: 600;
   font-size: 1.2rem;
 }
+
+@mixin description-comments {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+}
