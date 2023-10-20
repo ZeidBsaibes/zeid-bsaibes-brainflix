@@ -1,23 +1,46 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colours" as *;
+
 .videothumbnail {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  &__button {
+    display: flex;
+    background-color: $primary-white;
+    border: none;
+  }
 
   &__left {
-    width: auto;
+    margin: auto auto;
   }
 
   &__right {
-    width: auto;
+    margin: auto auto;
+    padding-left: 1rem;
   }
 
   &__image {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 130px;
     border-radius: 5px;
   }
 
   &__title {
+    display: block;
+
+    text-align: left;
+    margin: 0;
+    margin-bottom: 0.8rem;
+    @include demi-weight-item;
   }
 
   &__creator {
+    text-align: left;
+    @include description-comments;
+    margin: 0;
   }
 }

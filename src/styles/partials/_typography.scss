@@ -91,16 +91,19 @@ $avenir: "Avenir Next LT Pro";
 }
 
 @mixin video-meta-text {
+  font-family: $avenir;
   color: $primary-silver;
   font-size: 1.2rem;
 }
 
 @mixin demi-weight-item {
+  font-family: $avenir;
   font-weight: 600;
   font-size: 1.2rem;
 }
 
 @mixin description-comments {
+  font-family: $avenir;
   font-size: 1.3rem;
   line-height: 1.8rem;
 }

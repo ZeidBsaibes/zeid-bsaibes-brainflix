@@ -5,6 +5,7 @@ function VideoThumbnail({ imageSrc, title, channel, id, updateActiveVideo }) {
   return (
     <div className="videothumbnail">
       <button
+        className="videothumbnail__button"
         onClick={() => {
           updateActiveVideo(id);
         }}
