@@ -1,12 +1,22 @@
+@use "../../styles/partials/layout" as *;
+
 .player {
-  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+
   width: 100%;
-  margin: auto auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+
   background-color: black;
 
   &__screen {
     width: 100%;
+
+    @include tablet-breakpoint {
+      width: 90%;
+      height: 600px;
+    }
+    @include desktop-breakpoint {
+      width: 70%;
+    }
   }
 }

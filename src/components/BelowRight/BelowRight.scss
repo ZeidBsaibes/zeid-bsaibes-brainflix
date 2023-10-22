@@ -1,5 +1,6 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/layout" as *;
+@use "../../styles/partials/colours" as *;
 
 .below-right {
   display: flex;
@@ -9,6 +10,10 @@
 
   @include tablet-breakpoint {
     width: 50%;
+  }
+
+  @include desktop-breakpoint {
+    border-left: 2px solid $secondary-mercury;
   }
 
   &__title {

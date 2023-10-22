@@ -29,7 +29,6 @@
       width: 30%;
       margin-top: 32px;
       margin-left: 0px;
-
       flex-grow: 2;
     }
   }
@@ -40,6 +39,10 @@
 
     @include tablet-breakpoint {
       width: 70%;
+    }
+
+    @include desktop-breakpoint {
+      width: 65%;
     }
   }
 }

@@ -1,4 +1,9 @@
+@use "../../styles/partials/layout" as *;
 .below {
   display: flex;
   flex-direction: column;
+
+  @include desktop-breakpoint {
+    flex-direction: row;
+  }
 }

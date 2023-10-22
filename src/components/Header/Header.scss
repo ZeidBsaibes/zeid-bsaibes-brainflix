@@ -4,17 +4,16 @@
 .header {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.5rem;
   align-items: center;
-  background-color: green;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
   @include page-header-desktop;
 
   @include tablet-breakpoint {
-    background-color: red;
     flex-direction: row;
   }
 
   @include desktop-breakpoint {
-    background-color: blue;
   }
 }

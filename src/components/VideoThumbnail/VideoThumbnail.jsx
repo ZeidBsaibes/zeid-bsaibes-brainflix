@@ -8,6 +8,8 @@ function VideoThumbnail({ imageSrc, title, channel, id, updateActiveVideo }) {
         className="videothumbnail__button"
         onClick={() => {
           updateActiveVideo(id);
+          document.body.scrollTop = 0; // scroll to top for safari
+          document.documentElement.scrollTop = 0; //scroll to top for chrome/firefox/IE/
         }}
       >
         <div className="videothumbnail__left">
