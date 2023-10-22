@@ -1,13 +1,25 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/colours" as *;
+@use "../../styles/partials/layout" as *;
 
 .video-title {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  width: 100%;
   border-bottom: 2px solid $secondary-mercury;
+
+  @include tablet-breakpoint {
+    border: none;
+    justify-content: flex-start;
+  }
+
   &__title {
     text-align: left;
     @include page-header-desktop;
     font-weight: 600;
+
+    @include tablet-breakpoint {
+      margin-bottom: 0;
+    }
   }
 }

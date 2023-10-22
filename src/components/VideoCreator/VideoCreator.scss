@@ -1,7 +1,14 @@
 @use "../../styles/partials/typography" as *;
+@use "../../styles/partials/layout" as *;
 
 .video-creator {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  @include tablet-breakpoint {
+    width: 40%;
+  }
   &__text {
     @include demi-weight-item;
+    margin: 0;
   }
 }

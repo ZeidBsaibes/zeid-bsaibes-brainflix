@@ -1,7 +1,10 @@
 @use "../../styles/partials/colours" as *;
 @use "../../styles/partials/typography" as *;
+@use "../../styles/partials/layout" as *;
 
 .form-button {
+  display: flex;
+  justify-content: center;
   &__button {
     background-color: $primary-blue;
     color: $primary-white;
@@ -10,11 +13,14 @@
     height: 3.5rem;
     border-radius: 5px;
     order: 1;
-    // @include demi-weight-item;
     font-size: 1.2rem;
-    // background-image: url(../../assets/icons/upload.svg);
     background-repeat: no-repeat;
     background-size: 2rem;
     background-position: 1rem 0.7rem;
+    max-width: 30rem;
+
+    @include tablet-breakpoint {
+      max-width: 14rem;
+    }
   }
 }

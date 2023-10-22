@@ -1,12 +1,21 @@
 @use "../../styles/partials/typography" as *;
+@use "../../styles/partials/layout" as *;
 
 .video-views {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
   &__text {
     @include video-meta-text;
     padding-bottom: 0.3rem;
+    margin: 0;
     margin-left: 0.5rem;
+
+    @include tablet-breakpoint {
+      margin-right: 1rem;
+    }
   }
 }

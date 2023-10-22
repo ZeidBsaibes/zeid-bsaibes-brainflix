@@ -19,9 +19,13 @@
     display: flex;
     gap: 1.5rem;
     max-width: 30rem;
+    margin-bottom: 0.5rem;
 
     @include tablet-breakpoint {
       margin: auto auto;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      margin-right: 1rem;
     }
   }
 
@@ -38,6 +42,7 @@
     display: none;
     @include tablet-breakpoint {
       display: flex;
+      align-items: center;
     }
   }
   &__mobile-avatar {

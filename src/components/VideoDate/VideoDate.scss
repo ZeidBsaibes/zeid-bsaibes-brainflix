@@ -1,7 +1,14 @@
 @use "../../styles/partials/typography" as *;
+@use "../../styles/partials/layout" as *;
 
 .video-date {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  @include tablet-breakpoint {
+    width: 40%;
+  }
   &__text {
     @include video-meta-text;
+    margin: 0;
   }
 }
