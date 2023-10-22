@@ -43,6 +43,7 @@
     @include tablet-breakpoint {
       display: flex;
       align-items: center;
+      margin-left: 1rem;
     }
   }
   &__mobile-avatar {

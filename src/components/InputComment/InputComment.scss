@@ -1,7 +1,13 @@
 @use "../../styles/partials/globals" as *;
 @use "../../styles/partials/typography" as *;
+@use "../../styles/partials/layout" as *;
 
 .inputcomment {
+  @include tablet-breakpoint {
+    width: 100%;
+    padding-left: 1rem;
+  }
+
   &__input {
     @include input-style;
     width: 100%;
@@ -12,6 +18,10 @@
     padding-top: 1rem;
     resize: none;
     @include input-placeholder-style;
+
+    @include tablet-breakpoint {
+      height: 3.7rem;
+    }
   }
 
   &__input::placeholder {

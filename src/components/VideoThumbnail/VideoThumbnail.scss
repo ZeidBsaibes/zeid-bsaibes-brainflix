@@ -24,14 +24,14 @@
   }
 
   &__image {
-    height: 80px;
-    width: 130px;
+    object-fit: cover;
+    height: 110px;
+    width: 180px;
     border-radius: 5px;
   }
 
   &__title {
     display: block;
-
     text-align: left;
     margin: 0;
     margin-bottom: 0.8rem;

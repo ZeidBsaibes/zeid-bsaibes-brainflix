@@ -5,6 +5,10 @@
 .form-button {
   display: flex;
   justify-content: center;
+
+  @include tablet-breakpoint {
+    justify-content: flex-end;
+  }
   &__button {
     background-color: $primary-blue;
     color: $primary-white;

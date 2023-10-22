@@ -1,5 +1,6 @@
 @use "../../styles/partials/colours" as *;
 @use "../../styles/partials/typography" as *;
+@use "../../styles/partials/layout" as *;
 
 .commentcard {
   display: flex;
@@ -10,6 +11,10 @@
   &__left {
     width: 20%;
     padding-top: 1.4rem;
+
+    @include tablet-breakpoint {
+      width: 6rem;
+    }
   }
 
   &__right {

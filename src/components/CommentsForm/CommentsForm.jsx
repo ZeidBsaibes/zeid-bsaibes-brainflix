@@ -13,8 +13,12 @@ function CommentsForm() {
         <Avatar image={avatarImage} />
       </div>
       <div className="commentsform__right">
-        <InputComment />
-        <Button text="COMMENT" icon={commentIcon} />
+        <div className="commentsform__input">
+          <InputComment />
+        </div>
+        <div className="commentsform__button">
+          <Button text="COMMENT" icon={commentIcon} />
+        </div>
       </div>
     </div>
   );
