@@ -1,0 +1,20 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/typography" as *;
+
+.lottie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__animation {
+    width: 30rem;
+  }
+  &__title {
+    font-family: $avenir;
+  }
+
+  &__button {
+    text-decoration: none;
+  }
+}
