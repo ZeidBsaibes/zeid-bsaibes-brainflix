@@ -15,7 +15,9 @@
   @include desktop-breakpoint {
     border-left: 2px solid $secondary-mercury;
   }
-
+  &__link {
+    text-decoration: none;
+  }
   &__title {
     @include video-meta-text;
     font-weight: 600;

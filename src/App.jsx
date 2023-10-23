@@ -1,13 +1,12 @@
 import "./App.scss";
-import Below from "./components/Below/Below";
 import Header from "./components/Header/Header";
-import Player from "./components/Player/Player";
 import { videoDetails } from "./assets/data/video-details";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import fetchVideos from "./scripts/utils/fetch-videos";
 import HomePage from "./pages/HomePage/HomePage";
 import NotFound from "./pages/NotFound/NotFound";
+import VideoPage from "./pages/VideoPage/VideoPage";
 
 function App() {
   const [videos, setVideos] = useState(videoDetails);
@@ -49,6 +48,7 @@ function App() {
               />
             }
           ></Route>
+          <Route path="/videos/:videoId" element={<VideoPage />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </BrowserRouter>
