@@ -4,12 +4,13 @@ import Header from "./components/Header/Header";
 import Player from "./components/Player/Player";
 import { videoDetails } from "./assets/data/video-details";
 import { useState } from "react";
+import fetchVideos from "./scripts/utils/fetch-videos";
 
 function App() {
+  const [videos, setVideos] = useState(videoDetails);
   const initialVideoId = videoDetails[0].id;
   const initialVideoObject = videoDetails[0];
 
-  const [videos, setVideos] = useState(videoDetails);
   const [activeVideoId, setActiveVideoId] = useState(initialVideoId);
   const [activeVideoObject, setActiveVideoObject] =
     useState(initialVideoObject);
