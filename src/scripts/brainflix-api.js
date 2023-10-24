@@ -9,10 +9,21 @@ class BrainFlixApi {
     this.baseURL = BASE_URL;
   }
 
-  getVideos = async () => {
+  getVideosList = async () => {
     try {
       const response = await axios.get(
         `${this.baseURL}videos?api_key=${this.apiKey}`
+      );
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  getVideoById = async (id) => {
+    try {
+      const response = await axios.get(
+        `${this.baseURL}videos/${id}?api_key=${this.apiKey}`
       );
       return response;
     } catch (error) {

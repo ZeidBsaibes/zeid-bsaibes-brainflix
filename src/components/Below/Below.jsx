@@ -3,19 +3,16 @@ import "./Below.scss";
 import BelowLeft from "../BelowLeft/BelowLeft";
 import BelowRight from "../BelowRight/BelowRight";
 
-function Below({
-  videos,
-  updateActiveVideo,
-  activeVideoObject,
-  activeVideoId,
-}) {
+function Below({ activeVideoObject, videosList, activeVideoId }) {
   return (
     <div className="below">
       <BelowLeft activeVideoObject={activeVideoObject} />
       <BelowRight
-        videos={videos}
-        updateActiveVideo={updateActiveVideo}
+        videosList={videosList}
         activeVideoId={activeVideoId}
+        // videos={videos}
+        // updateActiveVideo={updateActiveVideo}
+        // activeVideoId={activeVideoId}
       />
     </div>
   );

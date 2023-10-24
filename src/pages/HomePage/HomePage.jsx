@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../../components/Header/Header";
 import Player from "../../components/Player/Player";
 import Below from "../../components/Below/Below";
+import MainPage from "../MainPage/MainPage";
 
 function HomePage({
   activeVideoObject,
@@ -11,13 +11,14 @@ function HomePage({
 }) {
   return (
     <>
-      <Player activeVideoObject={activeVideoObject} />
+      <MainPage />
+      {/* <Player activeVideoObject={activeVideoObject} />
       <Below
         videos={videos}
         updateActiveVideo={updateActiveVideo}
         activeVideoObject={activeVideoObject}
         activeVideoId={activeVideoId}
-      />
+      /> */}
     </>
   );
 }

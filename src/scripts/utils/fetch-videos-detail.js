@@ -1,8 +1,8 @@
 import apiInstance from "../brainflix-api-instance";
 
-const fetchVideos = async () => {
+const fetchVideosFromId = async (id) => {
   try {
-    const response = await apiInstance.getVideos();
+    const response = await apiInstance.getVideoById(id);
 
     return response.data;
   } catch (error) {
@@ -10,4 +10,4 @@ const fetchVideos = async () => {
   }
 };
 
-export default fetchVideos;
+export default fetchVideosFromId;

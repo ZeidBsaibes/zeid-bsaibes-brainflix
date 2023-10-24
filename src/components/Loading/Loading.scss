@@ -1,0 +1,18 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colours" as *;
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+    @include page-header-desktop;
+    color: $primary-blue;
+  }
+
+  &__animation {
+    height: 50vw;
+  }
+}

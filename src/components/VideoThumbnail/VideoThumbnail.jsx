@@ -1,13 +1,13 @@
 import React from "react";
 import "./VideoThumbnail.scss";
 
-function VideoThumbnail({ imageSrc, title, channel, id, updateActiveVideo }) {
+function VideoThumbnail({ imageSrc, title, channel, id }) {
   return (
     <div className="videothumbnail">
       <button
         className="videothumbnail__button"
         onClick={() => {
-          updateActiveVideo(id);
+          // updateActiveVideo(id);
           document.body.scrollTop = 0; // scroll to top for safari
           document.documentElement.scrollTop = 0; //scroll to top for chrome/firefox/IE/
         }}
