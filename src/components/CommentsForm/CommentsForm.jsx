@@ -5,8 +5,31 @@ import avatarImage from "../../assets/images/Mohan-muruge.jpg";
 import InputComment from "../InputComment/InputComment";
 import commentIcon from "../../assets/icons/add_comment.svg";
 import "./CommentsForm.scss";
+import { useState } from "react";
+import PostComment from "../../scripts/utils/post-comment";
 
-function CommentsForm() {
+function CommentsForm({ videoId }) {
+  const [newComment, setNewComment] = useState(null);
+
+  //capture comment text onChange event from InputComment.jsx
+
+  const handleCommentInput = (event) => {
+    const newComment = event.target.value;
+    setNewComment(newComment);
+  };
+
+  //capture button onClick event from Button.jsx
+  const handleSubmitClick = async () => {
+    console.log("button has been clicked ");
+    const postBody = { name: "Zeid", comment: newComment };
+    // console.log(`postbody is:`, postBody);
+    // console.log("video Id is", videoId);
+    const postBodyJson = JSON.stringify(postBody);
+    console.log("post body jsoin", postBodyJson);
+    const response = await PostComment(videoId, postBody);
+    console.log(response);
+  };
+
   return (
     <div className="commentsform">
       <div className="commentsform__left">
@@ -14,10 +37,14 @@ function CommentsForm() {
       </div>
       <div className="commentsform__right">
         <div className="commentsform__input">
-          <InputComment />
+          <InputComment handleCommentInput={handleCommentInput} />
         </div>
         <div className="commentsform__button">
-          <Button text="COMMENT" icon={commentIcon} />
+          <Button
+            text="COMMENT"
+            icon={commentIcon}
+            handleClick={handleSubmitClick}
+          />
         </div>
       </div>
     </div>

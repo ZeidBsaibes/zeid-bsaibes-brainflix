@@ -1,7 +1,8 @@
 import React from "react";
 import "./InputComment.scss";
+import { useState } from "react";
 
-function InputComment() {
+function InputComment({ handleCommentInput }) {
   return (
     <div className="inputcomment">
       <form
@@ -17,6 +18,7 @@ function InputComment() {
           id="newCommentInput"
           className="inputcomment__input"
           placeholder="Add a new comment"
+          onChange={(event) => handleCommentInput(event)}
         />
       </form>
     </div>

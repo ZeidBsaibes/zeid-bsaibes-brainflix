@@ -3,11 +3,11 @@ import CommentsCount from "../CommentsCount/CommentsCount";
 import CommentsForm from "../CommentsForm/CommentsForm";
 import CommentCard from "../CommentCard/CommentCard";
 
-function Comments({ activeVideoComments }) {
+function Comments({ activeVideoComments, activeVideoObject }) {
   return (
     <div>
       <CommentsCount activeVideoComments={activeVideoComments} />
-      <CommentsForm />
+      <CommentsForm videoId={activeVideoObject.id} />
       {activeVideoComments.map((comment) => {
         return (
           <CommentCard

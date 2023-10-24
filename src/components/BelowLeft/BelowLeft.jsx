@@ -7,7 +7,10 @@ function BelowLeft({ activeVideoObject }) {
   return (
     <div className="below-left">
       <VideoMeta activeVideoObject={activeVideoObject} />
-      <Comments activeVideoComments={activeVideoObject.comments} />
+      <Comments
+        activeVideoComments={activeVideoObject.comments}
+        activeVideoObject={activeVideoObject}
+      />
     </div>
   );
 }

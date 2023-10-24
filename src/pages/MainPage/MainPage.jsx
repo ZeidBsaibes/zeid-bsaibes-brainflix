@@ -34,7 +34,11 @@ function MainPage() {
     getAndSetVideoObject(activeVideoId);
   }, [activeVideoId]);
 
-  if (activeVideoId && videosList) {
+  //conditionally render JSX when all data is available
+  console.log("is this true", activeVideoId && videosList);
+
+  if (videosList && activeVideoObject) {
+    console.log("current video id:", activeVideoObject.id);
     return (
       <>
         <Player activeVideoObject={activeVideoObject} />
@@ -47,9 +51,7 @@ function MainPage() {
     );
   }
 
-  if (!activeVideoObject || !videosList) {
-    return <Loading />;
-  }
+  return <Loading />;
 }
 
 export default MainPage;
