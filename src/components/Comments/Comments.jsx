@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CommentsCount from "../CommentsCount/CommentsCount";
 import CommentsForm from "../CommentsForm/CommentsForm";
 import CommentCard from "../CommentCard/CommentCard";
 import { useState } from "react";
+import fetchVideosFromId from "../../scripts/utils/fetch-videos-detail";
 
 function Comments({
   activeVideoComments,
@@ -11,7 +12,12 @@ function Comments({
 }) {
   const [comments, setComments] = useState(activeVideoComments);
 
-  console.log(`from comments`, comments);
+  // console.log(`from comments`, activeVideoObject);
+
+  useEffect(() => {
+    setComments(activeVideoComments);
+  }, [activeVideoComments]);
+
   return (
     <div>
       <CommentsCount comments={comments} />

@@ -7,8 +7,6 @@ import fetchVideosFromId from "../../scripts/utils/fetch-videos-detail";
 function DeleteIcon({ commentId, videoId, setComments }) {
   const handleDelete = async (videoId, commentId) => {
     try {
-      console.log(`commentid`, commentId);
-      console.log(`videoId`, videoId);
       const response = await deleteComment(videoId, commentId);
       console.log(response);
       const updatedVideoObject = await fetchVideosFromId(videoId);

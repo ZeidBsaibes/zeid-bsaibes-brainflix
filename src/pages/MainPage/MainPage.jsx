@@ -37,10 +37,8 @@ function MainPage() {
   }, [activeVideoId]);
 
   //conditionally render JSX when all data is available
-  console.log("is this true", activeVideoId && videosList);
 
   if (videosList && activeVideoObject) {
-    console.log("current video id:", activeVideoObject.id);
     return (
       <>
         <Player activeVideoObject={activeVideoObject} />
