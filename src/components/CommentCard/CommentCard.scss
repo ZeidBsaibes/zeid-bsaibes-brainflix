@@ -5,7 +5,6 @@
 .commentcard {
   display: flex;
   margin-top: 2rem;
-
   border-top: 1px solid $secondary-mercury;
 
   &__left {
@@ -20,28 +19,39 @@
     margin-left: 1rem;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    width: 100%;
     &--top {
       display: flex;
       justify-content: space-between;
+      width: 100%;
+    }
+    &--top-end {
+      display: flex;
+      justify-content: center;
+    }
+
+    &--top-start {
+      display: flex;
     }
     &--bottom {
       margin-top: 0;
+      display: block;
     }
   }
 
   &__author {
     @include demi-weight-item;
-    width: auto;
   }
 
   &__date {
-    width: auto;
     @include video-meta-text;
   }
 
   &__comment {
     margin: 0;
     @include description-comments;
+    width: auto;
+    display: block;
   }
 }

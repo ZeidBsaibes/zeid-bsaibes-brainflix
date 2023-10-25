@@ -1,0 +1,15 @@
+@use "../../styles/partials/colours" as *;
+
+.delete-icon {
+  display: flex;
+  height: 100%;
+
+  &__svg {
+    height: 100%;
+    fill: $secondary-mercury;
+  }
+
+  &__svg:hover {
+    fill: $secondary-blue;
+  }
+}

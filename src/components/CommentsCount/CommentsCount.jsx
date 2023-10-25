@@ -1,12 +1,10 @@
 import React from "react";
 import "./CommentsCount.scss";
 
-function CommentsCount({ activeVideoComments }) {
+function CommentsCount({ comments }) {
   return (
     <div className="comments-count">
-      <p className="comments-count__text">
-        {activeVideoComments.length} Comments
-      </p>
+      <p className="comments-count__text">{comments.length} Comments</p>
     </div>
   );
 }

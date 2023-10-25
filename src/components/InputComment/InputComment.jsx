@@ -1,8 +1,7 @@
 import React from "react";
 import "./InputComment.scss";
-import { useState } from "react";
 
-function InputComment({ handleCommentInput }) {
+function InputComment({ handleCommentInput, commentValue }) {
   return (
     <div className="inputcomment">
       <form
@@ -14,6 +13,7 @@ function InputComment({ handleCommentInput }) {
         </label>
         <textarea
           type="text"
+          value={commentValue}
           name="newCommentInput"
           id="newCommentInput"
           className="inputcomment__input"

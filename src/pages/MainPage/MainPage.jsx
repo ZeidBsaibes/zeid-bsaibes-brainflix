@@ -17,20 +17,22 @@ function MainPage() {
 
   // get the list of videos
 
+  const getAndSetVideosList = async () => {
+    const list = await fetchVideosList();
+    setVideosList(list);
+  };
+
   useEffect(() => {
-    const getAndSetVideosList = async () => {
-      const list = await fetchVideosList();
-      setVideosList(list);
-    };
     getAndSetVideosList();
   }, []);
 
   // get detail on a specific video
+  const getAndSetVideoObject = async (id) => {
+    const object = await fetchVideosFromId(id);
+    setActiveVideoObject(object);
+  };
+
   useEffect(() => {
-    const getAndSetVideoObject = async (id) => {
-      const object = await fetchVideosFromId(id);
-      setActiveVideoObject(object);
-    };
     getAndSetVideoObject(activeVideoId);
   }, [activeVideoId]);
 
@@ -46,6 +48,7 @@ function MainPage() {
           activeVideoObject={activeVideoObject}
           videosList={videosList}
           activeVideoId={activeVideoId}
+          refreshVideoObject={getAndSetVideoObject}
         />
       </>
     );

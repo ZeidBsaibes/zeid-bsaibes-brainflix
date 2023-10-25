@@ -7,9 +7,10 @@ import commentIcon from "../../assets/icons/add_comment.svg";
 import "./CommentsForm.scss";
 import { useState } from "react";
 import PostComment from "../../scripts/utils/post-comment";
+import fetchVideosFromId from "../../scripts/utils/fetch-videos-detail";
 
-function CommentsForm({ videoId }) {
-  const [newComment, setNewComment] = useState(null);
+function CommentsForm({ videoId, setComments }) {
+  const [newComment, setNewComment] = useState("");
 
   //capture comment text onChange event from InputComment.jsx
 
@@ -22,11 +23,13 @@ function CommentsForm({ videoId }) {
   const handleSubmitClick = async () => {
     console.log("button has been clicked ");
     const postBody = { name: "Zeid", comment: newComment };
-    // console.log(`postbody is:`, postBody);
-    // console.log("video Id is", videoId);
-    const postBodyJson = JSON.stringify(postBody);
-    console.log("post body jsoin", postBodyJson);
     const response = await PostComment(videoId, postBody);
+
+    setNewComment("");
+    const updatedVideoObject = await fetchVideosFromId(videoId);
+    console.log(`from inputcomment: `, updatedVideoObject.comments);
+    setComments(updatedVideoObject.comments);
+
     console.log(response);
   };
 
@@ -37,7 +40,10 @@ function CommentsForm({ videoId }) {
       </div>
       <div className="commentsform__right">
         <div className="commentsform__input">
-          <InputComment handleCommentInput={handleCommentInput} />
+          <InputComment
+            commentValue={newComment}
+            handleCommentInput={handleCommentInput}
+          />
         </div>
         <div className="commentsform__button">
           <Button
