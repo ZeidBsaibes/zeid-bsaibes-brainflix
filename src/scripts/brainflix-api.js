@@ -42,6 +42,17 @@ class BrainFlixApi {
       console.error(error);
     }
   };
+
+  deleteComment = async (videoId, commentId) => {
+    try {
+      const response = await axios.delete(
+        `${this.baseURL}/videos/${videoId}/comments/${commentId}?api_key=${this.apiKey}`
+      );
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  };
 }
 
 export default BrainFlixApi;

@@ -27,7 +27,7 @@ function CommentsForm({ videoId, setComments }) {
 
     setNewComment("");
     const updatedVideoObject = await fetchVideosFromId(videoId);
-    console.log(`from inputcomment: `, updatedVideoObject.comments);
+
     setComments(updatedVideoObject.comments);
 
     console.log(response);

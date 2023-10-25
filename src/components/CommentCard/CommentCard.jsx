@@ -4,7 +4,7 @@ import "./CommentCard.scss";
 import moment from "moment";
 import DeleteIcon from "../DeleteIcon/DeleteIcon";
 
-function CommentCard({ author, date, comment, id }) {
+function CommentCard({ author, date, comment, id, setComments, videoId }) {
   return (
     <div className="commentcard">
       <div className="commentcard__left">
@@ -18,7 +18,11 @@ function CommentCard({ author, date, comment, id }) {
           </div>
           <div className="commentcard__right--top-end">
             <p className="commentcard__date">{moment(date).fromNow()}</p>
-            <DeleteIcon id={id} />
+            <DeleteIcon
+              commentId={id}
+              videoId={videoId}
+              setComments={setComments}
+            />
           </div>
         </div>
         <div className="commentcard__right--bottom">

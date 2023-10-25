@@ -25,11 +25,13 @@ function Comments({
         .map((comment) => {
           return (
             <CommentCard
+              videoId={activeVideoObject.id}
               author={comment.name}
               comment={comment.comment}
               date={comment.timestamp}
               key={comment.id}
               id={comment.id}
+              setComments={setComments}
             />
           );
         })}
