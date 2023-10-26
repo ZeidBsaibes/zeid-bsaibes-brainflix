@@ -4,6 +4,7 @@ import uploadIcon from "../../assets/icons/upload.svg";
 import "./UploadForm.scss";
 import uploadPlaceholder from "../../assets/images/Upload_Preview.jpg";
 import "../../styles/partials/_colours.scss";
+import publishIcon from "../../assets/icons/publish.svg";
 
 function UploadForm() {
   return (
@@ -18,41 +19,47 @@ function UploadForm() {
           />
         </div>
 
-        <div className="uploadform__block--bottom">
-          <label htmlFor="newCommentInput" className="uploadform__label">
-            TITLE YOUR VIDEO
-          </label>
-          <textarea
-            type="text"
-            name="newUploadTitle"
-            id="newUploadTitle"
-            placeholder="Add a title to your video"
-            className="uploadform__input"
-          />
-          <label htmlFor="newCommentInput" className="uploadform__label">
-            ADD VIDEO DESCRIPTION
-          </label>
-          <textarea
-            type="text"
-            name="newUploadDescription"
-            id="newUploadDescription"
-            placeholder="Add a description to your video"
-            className="uploadform__input"
-          />
-        </div>
-
-        <div className="uploadform__buttons">
-          <Button
-            text="PUBLISH"
-            icon={uploadIcon}
-            className="uploadform__publish-button"
-          />
-          <Button
-            text="CANCEL"
-            className="uploadform__cancel-button"
-            bgColour={"#fff"}
-            textColour={"#0095ff"}
-          />
+        <div className="uploadform__block--bothbottom">
+          <div className="uploadform__block--middle">
+            <label htmlFor="newCommentInput" className="uploadform__label">
+              TITLE YOUR VIDEO
+            </label>
+            <textarea
+              type="text"
+              name="newUploadTitle"
+              id="newUploadTitle"
+              placeholder="Add a title to your video"
+              className="uploadform__input uploadform__input--title "
+            />
+            <label htmlFor="newCommentInput" className="uploadform__label">
+              ADD VIDEO DESCRIPTION
+            </label>
+            <textarea
+              type="text"
+              name="newUploadDescription"
+              id="newUploadDescription"
+              placeholder="Add a description to your video"
+              className="uploadform__input uploadform__input--description"
+            />
+          </div>
+          <div className="uploadform__block--bottom">
+            <div className="uploadform__buttons">
+              <div className="uploadform__button--publish">
+                <Button
+                  text="PUBLISH"
+                  icon={publishIcon}
+                  className="uploadform__button--publish"
+                />
+              </div>
+              <div className="uploadform__button--cancel">
+                <Button
+                  text="CANCEL"
+                  bgColour={"#fff"}
+                  textColour={"#0095ff"}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </form>
     </div>

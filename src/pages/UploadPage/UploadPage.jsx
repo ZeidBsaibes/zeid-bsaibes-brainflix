@@ -8,12 +8,8 @@ import React from "react";
 function UploadPage() {
   return (
     <>
-      <div>
-        <UploadTitle />
-      </div>
-      <div>
-        <UploadForm />
-      </div>
+      <UploadTitle />
+      <UploadForm />
     </>
   );
 }

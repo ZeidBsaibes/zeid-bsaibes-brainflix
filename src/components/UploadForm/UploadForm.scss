@@ -4,10 +4,12 @@
 @use "../../styles/partials/colours" as *;
 
 .uploadform {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
   @include tablet-breakpoint {
-    width: 100%;
-    padding-left: 1rem;
-    margin-left: 1rem;
   }
 
   &__placeholder {
@@ -35,18 +37,37 @@
   &__form {
     @include desktop-breakpoint {
       display: flex;
-      flex-direction: column;
       width: 100%;
-
-      @include desktop-breakpoint {
-        flex-direction: row;
-      }
     }
   }
   &__block {
     padding-left: 1rem;
     display: flex;
     flex-direction: column;
+
+    &--top {
+      margin-bottom: 1rem;
+    }
+
+    &--middle {
+      width: 100%;
+    }
+
+    &--bottom {
+      @include desktop-breakpoint {
+        display: flex;
+      }
+    }
+    &--bothbottom {
+      @include desktop-breakpoint {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        margin-left: 2rem;
+        align-items: flex-end;
+      }
+    }
   }
 
   &__input {
@@ -60,10 +81,16 @@
     resize: none;
     @include input-placeholder-style;
 
-    @include tablet-breakpoint {
-      height: 3.7rem;
-      max-width: 120rem;
+    &--title {
+      @include tablet-breakpoint {
+        height: 3.7rem;
+        max-width: 120rem;
+      }
+
+      &--description {
+      }
     }
+
     &--error {
       border-color: $error-primary;
       background-color: $error-background;
@@ -97,19 +124,43 @@
     font-weight: 600;
   }
 
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include tablet-breakpoint {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    @include desktop-breakpoint {
+    }
+  }
+
   &__button {
     width: 100%;
     margin-bottom: 0.5rem;
-    justify-self: flex-start;
-  }
+    justify-self: center;
 
-  &__publish-button {
-  }
+    &--publish {
+      margin-right: 0;
 
-  &__cancel-button {
-    background-color: none;
-  }
+      @include tablet-breakpoint {
+        order: 1;
+      }
 
-  &__buttons {
+      @include tablet-breakpoint {
+        display: flex;
+      }
+    }
+
+    &--cancel {
+      @include tablet-breakpoint {
+      }
+      @include tablet-breakpoint {
+        display: flex;
+      }
+    }
   }
 }

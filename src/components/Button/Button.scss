@@ -22,7 +22,7 @@
     background-repeat: no-repeat;
     background-size: 2rem;
     background-position: 1rem 0.7rem;
-    max-width: 30rem;
+    min-width: 15rem;
 
     @include tablet-breakpoint {
       max-width: 14rem;

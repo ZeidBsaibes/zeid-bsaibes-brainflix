@@ -8,15 +8,13 @@ function Button({ text, icon, handleClick, bgColour, textColour }) {
   const style2 = { backgroundColor: `${bgColour}` };
   const style3 = { color: `${textColour}` };
   return (
-    <div>
-      <button
-        className="form-button__button"
-        style={{ ...style1, ...style2, ...style3 }}
-        type="submit"
-      >
-        {text}
-      </button>
-    </div>
+    <button
+      className="form-button__button"
+      style={{ ...style1, ...style2, ...style3 }}
+      type="submit"
+    >
+      {text}
+    </button>
   );
 }
 
