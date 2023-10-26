@@ -7,11 +7,7 @@ function Button({ text, icon, handleClick }) {
       <button
         className="form-button__button"
         style={{ backgroundImage: `url(${icon})` }}
-        onClick={() => {
-          if (handleClick) {
-            handleClick();
-          }
-        }}
+        type="submit"
       >
         {text}
       </button>

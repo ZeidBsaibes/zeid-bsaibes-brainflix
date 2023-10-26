@@ -3,7 +3,6 @@ import CommentsCount from "../CommentsCount/CommentsCount";
 import CommentsForm from "../CommentsForm/CommentsForm";
 import CommentCard from "../CommentCard/CommentCard";
 import { useState } from "react";
-import fetchVideosFromId from "../../scripts/utils/fetch-videos-detail";
 
 function Comments({
   activeVideoComments,
@@ -11,8 +10,6 @@ function Comments({
   refreshVideoObject,
 }) {
   const [comments, setComments] = useState(activeVideoComments);
-
-  // console.log(`from comments`, activeVideoObject);
 
   useEffect(() => {
     setComments(activeVideoComments);
