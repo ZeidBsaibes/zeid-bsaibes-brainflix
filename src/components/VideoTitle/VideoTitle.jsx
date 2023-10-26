@@ -4,7 +4,7 @@ import "./VideoTitle.scss";
 function VideoTitle({ title }) {
   return (
     <div className="video-title">
-      <h2 className="video-title__title">{title}</h2>
+      <h1 className="video-title__title">{title}</h1>
     </div>
   );
 }

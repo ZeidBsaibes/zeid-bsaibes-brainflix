@@ -5,6 +5,7 @@
 .form-button {
   display: flex;
   justify-content: center;
+  text-decoration: none;
 
   @include tablet-breakpoint {
     justify-content: flex-end;

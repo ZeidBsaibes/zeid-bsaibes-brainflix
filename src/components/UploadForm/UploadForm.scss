@@ -1,0 +1,115 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/layout" as *;
+@use "../../styles/partials/colours" as *;
+
+.uploadform {
+  @include tablet-breakpoint {
+    width: 100%;
+    padding-left: 1rem;
+    margin-left: 1rem;
+  }
+
+  &__placeholder {
+    border-radius: 10px;
+    width: 100%;
+
+    @include tablet-breakpoint {
+      max-width: 30rem;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+
+    @include tablet-breakpoint {
+      flex-direction: row;
+      width: 80vw;
+    }
+  }
+
+  &__form {
+    @include desktop-breakpoint {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      @include desktop-breakpoint {
+        flex-direction: row;
+      }
+    }
+  }
+  &__block {
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    @include input-style;
+    width: 100%;
+    height: 9rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    resize: none;
+    @include input-placeholder-style;
+
+    @include tablet-breakpoint {
+      height: 3.7rem;
+      max-width: 120rem;
+    }
+    &--error {
+      border-color: $error-primary;
+      background-color: $error-background;
+    }
+  }
+
+  &__input:focus {
+    @include input-style;
+    width: 100%;
+    height: 9rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    resize: none;
+    @include input-placeholder-style;
+
+    @include tablet-breakpoint {
+      height: 3.7rem;
+      max-width: 120rem;
+    }
+  }
+
+  &__input::placeholder {
+    @include input-placeholder-style;
+    align-self: flex-start;
+  }
+
+  &__label {
+    @include video-meta-text;
+    font-weight: 600;
+  }
+
+  &__button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    justify-self: flex-start;
+  }
+
+  &__publish-button {
+  }
+
+  &__cancel-button {
+    background-color: none;
+  }
+
+  &__buttons {
+  }
+}

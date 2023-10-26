@@ -6,6 +6,7 @@ function FormInput() {
     <div className="form-input">
       <input
         type="search"
+        name="search"
         placeholder="Search"
         className="form-input__field form-input__icon"
       ></input>

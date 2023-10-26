@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound/NotFound";
 import MainPage from "./pages/MainPage/MainPage";
+import UploadPage from "./pages/UploadPage/UploadPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />}></Route>
           <Route path="/videos/:videoId" element={<MainPage />}></Route>
+          <Route path="/upload" element={<UploadPage />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </BrowserRouter>

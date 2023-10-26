@@ -1,0 +1,30 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colours" as *;
+@use "../../styles/partials/layout" as *;
+
+.upload-title {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+
+  @include tablet-breakpoint {
+    justify-content: flex-start;
+    border-bottom: 2px solid $secondary-mercury;
+  }
+
+  &__title {
+    text-align: left;
+
+    @include page-header-desktop;
+    font-weight: 600;
+
+    @include tablet-breakpoint {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -12,13 +12,6 @@ function HomePage({
   return (
     <>
       <MainPage />
-      {/* <Player activeVideoObject={activeVideoObject} />
-      <Below
-        videos={videos}
-        updateActiveVideo={updateActiveVideo}
-        activeVideoObject={activeVideoObject}
-        activeVideoId={activeVideoId}
-      /> */}
     </>
   );
 }
