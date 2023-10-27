@@ -12,6 +12,7 @@ function Button({ text, icon, handleClick, bgColour, textColour }) {
       className="form-button__button"
       style={{ ...style1, ...style2, ...style3 }}
       type="submit"
+      onClick={handleClick}
     >
       {text}
     </button>

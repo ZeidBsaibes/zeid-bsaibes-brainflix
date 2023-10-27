@@ -4,6 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound/NotFound";
 import MainPage from "./pages/MainPage/MainPage";
 import UploadPage from "./pages/UploadPage/UploadPage";
+import monster from "./scripts/utils/monster";
+
+console.log("Hello Dom!", monster);
 
 function App() {
   return (

@@ -52,7 +52,7 @@ function MainPage() {
     );
   }
 
-  return <Loading />;
+  return <Loading title={"Loading..."} />;
 }
 
 export default MainPage;
