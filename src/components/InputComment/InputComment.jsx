@@ -48,21 +48,24 @@ function InputComment({ setComments, videoId }) {
         onSubmit={handleSubmitClick}
         className="inputcomment__form"
       >
-        <label htmlFor="newCommentInput" className="inputcomment__label">
-          JOIN THE CONVERSATION
-        </label>
+        <div className="inputcomment__input-div">
+          <label htmlFor="newCommentInput" className="inputcomment__label">
+            JOIN THE CONVERSATION
+          </label>
+          <textarea
+            type="text"
+            value={newComment}
+            name="newCommentInput"
+            id="newCommentInput"
+            className={formClass}
+            placeholder="Add a new comment"
+            onChange={(event) => handleCommentInput(event)}
+          />
+        </div>
 
-        <textarea
-          type="text"
-          value={newComment}
-          name="newCommentInput"
-          id="newCommentInput"
-          className={formClass}
-          placeholder="Add a new comment"
-          onChange={(event) => handleCommentInput(event)}
-        />
-
-        <Button text="COMMENT" icon={commentIcon} />
+        <div className="inputcomment__button-div">
+          <Button text="COMMENT" icon={commentIcon} />
+        </div>
       </form>
     </div>
   );

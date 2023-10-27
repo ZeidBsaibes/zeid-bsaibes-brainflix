@@ -18,9 +18,8 @@ function UploadForm() {
 
     setIsUploading(!isUploading);
     const timer = setTimeout(() => {
-      console.log("This will run after 1 second!");
       navigate("/");
-    }, 2000);
+    }, 3000);
     return () => clearTimeout(timer);
   };
 
