@@ -10,6 +10,8 @@
   &__title {
     @include page-header-desktop;
     color: $primary-blue;
+    max-width: 30rem;
+    text-align: center;
   }
 
   &__animation {

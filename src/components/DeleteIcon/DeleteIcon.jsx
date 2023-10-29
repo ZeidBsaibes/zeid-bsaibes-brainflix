@@ -8,7 +8,7 @@ function DeleteIcon({ commentId, videoId, setComments }) {
   const handleDelete = async (videoId, commentId) => {
     try {
       const response = await deleteComment(videoId, commentId);
-      console.log(response);
+      // console.log(response);
       const updatedVideoObject = await fetchVideosFromId(videoId);
 
       setComments(updatedVideoObject.comments);

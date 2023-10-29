@@ -6,10 +6,6 @@ import InputComment from "../InputComment/InputComment";
 import "./CommentsForm.scss";
 
 function CommentsForm({ videoId, setComments }) {
-  //capture comment text onChange event from InputComment.jsx
-
-  //capture button onClick event from Button.jsx
-
   return (
     <div className="commentsform">
       <div className="commentsform__left">

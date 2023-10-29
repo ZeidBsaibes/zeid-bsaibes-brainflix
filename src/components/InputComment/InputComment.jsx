@@ -9,6 +9,7 @@ import fetchVideosFromId from "../../scripts/utils/fetch-videos-detail";
 function InputComment({ setComments, videoId }) {
   const [newComment, setNewComment] = useState("");
   const [formClass, setFormClass] = useState("inputcomment__input");
+  const [isFormEmpty, setIsFormEmpty] = useState(null);
 
   const commentCheck = (newComment) => {
     if (newComment === "") {
@@ -29,10 +30,13 @@ function InputComment({ setComments, videoId }) {
         const updatedVideoObject = await fetchVideosFromId(videoId);
 
         setComments(updatedVideoObject.comments);
+        setFormClass("inputcomment__input");
+        setIsFormEmpty(false);
       } catch (error) {
         console.error(error);
       }
     } else {
+      setIsFormEmpty(true);
     }
   };
 
@@ -52,13 +56,16 @@ function InputComment({ setComments, videoId }) {
           <label htmlFor="newCommentInput" className="inputcomment__label">
             JOIN THE CONVERSATION
           </label>
+
           <textarea
             type="text"
             value={newComment}
             name="newCommentInput"
             id="newCommentInput"
             className={formClass}
-            placeholder="Add a new comment"
+            placeholder={
+              isFormEmpty ? `Comment cannot be empty` : `Add a new comment`
+            }
             onChange={(event) => handleCommentInput(event)}
           />
         </div>

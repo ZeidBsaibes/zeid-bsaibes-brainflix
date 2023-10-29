@@ -11,15 +11,17 @@ console.log("Hello Dom!", monster);
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<MainPage />}></Route>
-          <Route path="/videos/:videoId" element={<MainPage />}></Route>
-          <Route path="/upload" element={<UploadPage />}></Route>
-          <Route path="*" element={<NotFound />}></Route>
-        </Routes>
-      </BrowserRouter>
+      <div className="app">
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<MainPage />}></Route>
+            <Route path="/videos/:videoId" element={<MainPage />}></Route>
+            <Route path="/upload" element={<UploadPage />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
     </>
   );
 }

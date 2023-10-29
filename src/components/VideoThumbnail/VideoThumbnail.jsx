@@ -7,15 +7,14 @@ function VideoThumbnail({ imageSrc, title, channel, id }) {
       <button
         className="videothumbnail__button"
         onClick={() => {
-          // updateActiveVideo(id);
-          document.body.scrollTop = 0; // scroll to top for safari
-          document.documentElement.scrollTop = 0; //scroll to top for chrome/firefox/IE/
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
         }}
       >
         <div className="videothumbnail__left">
           <img
             src={imageSrc}
-            alt={`a video cover for a video entitled ${title}`}
+            alt={`video thumbnail for a video entitled ${title}`}
             className="videothumbnail__image"
           />
         </div>

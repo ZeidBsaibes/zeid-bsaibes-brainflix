@@ -45,9 +45,18 @@
       height: 3.7rem;
       max-width: 120rem;
     }
+
+    &__input::placeholder {
+      @include input-placeholder-style;
+      align-self: flex-start;
+    }
     &--error {
       border-color: $error-primary;
       background-color: $error-background;
+      color: $error-primary;
+    }
+    &--error::placeholder {
+      color: $error-primary;
     }
   }
 
@@ -58,7 +67,7 @@
 
   &__button-div {
     @include tablet-breakpoint {
-      padding-top: 10px;
+      padding-top: 0.625rem;
       display: flex;
       align-items: center;
     }
@@ -79,11 +88,6 @@
       height: 3.7rem;
       max-width: 120rem;
     }
-  }
-
-  &__input::placeholder {
-    @include input-placeholder-style;
-    align-self: flex-start;
   }
 
   &__label {

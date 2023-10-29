@@ -82,10 +82,8 @@
     @include input-placeholder-style;
 
     &--title {
-      @include tablet-breakpoint {
-        height: 3.7rem;
-        max-width: 120rem;
-      }
+      height: 3.7rem;
+      max-width: 120rem;
 
       &--description {
       }

@@ -8,7 +8,7 @@ function BelowRight({ videosList, updateActiveVideo, activeVideoId }) {
     return video.id !== activeVideoId;
   });
   return (
-    <div className="below-right">
+    <article className="below-right">
       <h3 className="below-right__title">NEXT VIDEOS</h3>
       {videosExcludingActive.map((video) => {
         return (
@@ -27,7 +27,7 @@ function BelowRight({ videosList, updateActiveVideo, activeVideoId }) {
           </Link>
         );
       })}
-    </div>
+    </article>
   );
 }
 

@@ -4,7 +4,7 @@
 
   &__left {
     width: auto;
-    padding-top: 32px;
+    padding-top: 2rem;
 
     @include tablet-breakpoint {
       max-width: 4.625rem;
@@ -13,7 +13,7 @@
 
   &__right {
     width: 100%;
-    margin-left: 16px;
+    margin-left: 1rem;
     display: flex;
     flex-direction: column;
     @include tablet-breakpoint {
@@ -27,8 +27,8 @@
     width: 100%;
     @include tablet-breakpoint {
       width: 30%;
-      margin-top: 32px;
-      margin-left: 0px;
+      margin-top: 2rem;
+      margin-left: 0rem;
       flex-grow: 2;
     }
   }

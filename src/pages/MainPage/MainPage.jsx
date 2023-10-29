@@ -41,13 +41,19 @@ function MainPage() {
   if (videosList && activeVideoObject) {
     return (
       <>
-        <Player activeVideoObject={activeVideoObject} />
-        <Below
-          activeVideoObject={activeVideoObject}
-          videosList={videosList}
-          activeVideoId={activeVideoId}
-          refreshVideoObject={getAndSetVideoObject}
-        />
+        <main>
+          <section>
+            <Player activeVideoObject={activeVideoObject} />
+          </section>
+          <section>
+            <Below
+              activeVideoObject={activeVideoObject}
+              videosList={videosList}
+              activeVideoId={activeVideoId}
+              refreshVideoObject={getAndSetVideoObject}
+            />
+          </section>
+        </main>
       </>
     );
   }
