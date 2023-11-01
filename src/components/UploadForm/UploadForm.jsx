@@ -13,6 +13,7 @@ function UploadForm() {
   const [vidTitle, setVidTitle] = useState("");
   const [vidDescription, setVidDescription] = useState("");
   const [formErrors, setFormErrors] = useState([]);
+  const [image, setImage] = useState(null);
 
   const navigate = useNavigate();
 
@@ -29,11 +30,11 @@ function UploadForm() {
     setFormErrors([]);
 
     if (!vidTitle) {
-      setFormErrors((prev) => [...prev, "You Must Add a video title"]);
+      setFormErrors((prev) => [...prev, "You must Add a video title"]);
     }
 
     if (!vidDescription) {
-      setFormErrors((prev) => [...prev, "You Must add a video description"]);
+      setFormErrors((prev) => [...prev, "You must add a video description"]);
     }
 
     if (vidTitle && vidDescription) {
@@ -112,7 +113,6 @@ function UploadForm() {
               </label>
               <textarea
                 type="text"
-                rows="10"
                 name="newUploadDescription"
                 id="newdesc"
                 placeholder="Add a description to your video"
@@ -120,6 +120,16 @@ function UploadForm() {
                 onInput={(event) => {
                   handleInput(event);
                 }}
+              />
+              <label
+                htmlFor="newUploadDescription"
+                className="uploadform__label"
+              >
+                ADD VIDEO POSTER
+              </label>
+              <input
+                type="file"
+                onChange={(event) => setImage(event.target.files[0])}
               />
             </div>
             <div className="uploadform__block--bottom">
