@@ -49,6 +49,15 @@ class BrainFlixApi {
       console.error(error);
     }
   };
+
+  postVideo = async (newVideo) => {
+    try {
+      const response = await axios.post(`${this.baseURL}/videos`, newVideo);
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  };
 }
 
 export default BrainFlixApi;

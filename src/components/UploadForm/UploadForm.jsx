@@ -1,21 +1,66 @@
 import React from "react";
 import Button from "../Button/Button";
 import "./UploadForm.scss";
-
 import "../../styles/partials/_colours.scss";
 import publishIcon from "../../assets/icons/publish.svg";
 import { useState } from "react";
-
 import Loading from "../Loading/Loading";
 import { useNavigate } from "react-router-dom";
+import postVideo from "../../scripts/utils/post-video";
 
 function UploadForm() {
   const [isUploading, setIsUploading] = useState(false);
+  const [vidTitle, setVidTitle] = useState("");
+  const [vidDescription, setVidDescription] = useState("");
+  const [formErrors, setFormErrors] = useState([]);
+
   const navigate = useNavigate();
+
+  const handleInput = (event) => {
+    if (event.target.id === "newtitle") {
+      setVidTitle(event.target.value);
+    } else if (event.target.id === "newdesc") {
+      setVidDescription(event.target.value);
+    }
+  };
 
   const handleClick = async (event) => {
     event.preventDefault();
+    setFormErrors([]);
 
+    if (!vidTitle) {
+      setFormErrors((prev) => [...prev, "You Must Add a video title"]);
+    }
+
+    if (!vidDescription) {
+      setFormErrors((prev) => [...prev, "You Must add a video description"]);
+    }
+
+    if (vidTitle && vidDescription) {
+      const newVideo = {
+        title: vidTitle,
+        description: vidDescription,
+        channel: "Zeid's Channel",
+        image: "http://localhost:8080/public/images/mountains.jpg",
+        views: "0",
+        likes: "0",
+        duration: Math.floor(Math.random() * 100) + 1,
+        video: "https://project-2-api.herokuapp.com/stream",
+        comments: [],
+      };
+      try {
+        const response = await postVideo(newVideo);
+        console.log(response);
+        setVidTitle("");
+        setVidDescription("");
+        uploadSuccess();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
+
+  const uploadSuccess = () => {
     setIsUploading(!isUploading);
     const timer = setTimeout(() => {
       navigate("/");
@@ -52,9 +97,12 @@ function UploadForm() {
               <textarea
                 type="text"
                 name="newUploadTitle"
-                id="newUploadTitle"
+                id="newtitle"
                 placeholder="Add a title to your video"
-                className="uploadform__input uploadform__input--title "
+                className="uploadform__input uploadform__input--title"
+                onInput={(event) => {
+                  handleInput(event);
+                }}
               />
               <label
                 htmlFor="newUploadDescription"
@@ -64,10 +112,14 @@ function UploadForm() {
               </label>
               <textarea
                 type="text"
+                rows="10"
                 name="newUploadDescription"
-                id="newUploadDescription"
+                id="newdesc"
                 placeholder="Add a description to your video"
                 className="uploadform__input uploadform__input--description"
+                onInput={(event) => {
+                  handleInput(event);
+                }}
               />
             </div>
             <div className="uploadform__block--bottom">
@@ -77,9 +129,7 @@ function UploadForm() {
                     text="PUBLISH"
                     icon={publishIcon}
                     className="uploadform__button--publish"
-                    handleClick={(event) => {
-                      handleClick(event);
-                    }}
+                    handleClick={handleClick}
                   />
                 </div>
                 <div className="uploadform__button--cancel">
@@ -93,6 +143,13 @@ function UploadForm() {
             </div>
           </div>
         </form>
+        <div>
+          {formErrors
+            ? formErrors.map((error) => (
+                <div className="uploadform__errors">{error}</div>
+              ))
+            : ""}
+        </div>
       </div>
     );
   }
