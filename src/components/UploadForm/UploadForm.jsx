@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
 import "./UploadForm.scss";
-import uploadPlaceholder from "../../assets/images/Upload_Preview.jpg";
+
 import "../../styles/partials/_colours.scss";
 import publishIcon from "../../assets/icons/publish.svg";
 import { useState } from "react";
@@ -39,7 +39,7 @@ function UploadForm() {
             <h2 className="uploadform__label">VIDEO THUMBNAIL</h2>
             <img
               className="uploadform__placeholder"
-              src={uploadPlaceholder}
+              src="http://localhost:8080/public/images/plane.jpg"
               alt="placeholder for upload thumbnail"
             />
           </div>

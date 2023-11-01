@@ -1,7 +1,7 @@
 import API_KEY from "./brainflix-api";
 import axios from "axios";
 
-const BASE_URL = "https://project-2-api.herokuapp.com";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 class BrainFlixApi {
   constructor(apiKey) {
@@ -11,9 +11,7 @@ class BrainFlixApi {
 
   getVideosList = async () => {
     try {
-      const response = await axios.get(
-        `${this.baseURL}/videos?api_key=${this.apiKey}`
-      );
+      const response = await axios.get(`${this.baseURL}/videos`);
       return response;
     } catch (error) {
       console.error(error);
@@ -22,9 +20,7 @@ class BrainFlixApi {
 
   getVideoById = async (id) => {
     try {
-      const response = await axios.get(
-        `${this.baseURL}/videos/${id}?api_key=${this.apiKey}`
-      );
+      const response = await axios.get(`${this.baseURL}/videos/${id}`);
       return response;
     } catch (error) {
       console.error(error);
