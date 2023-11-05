@@ -25,7 +25,6 @@ function InputComment({ setComments, videoId }) {
       try {
         const postBody = { name: "Zeid", comment: newComment };
         const response = await PostComment(videoId, postBody);
-        console.log(response);
 
         setNewComment("");
         const updatedVideoObject = await fetchVideosFromId(videoId);

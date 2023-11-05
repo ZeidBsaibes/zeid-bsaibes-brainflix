@@ -18,11 +18,6 @@ function CommentCard({ author, date, comment, id, setComments, videoId }) {
           </div>
           <div className="commentcard__right--top-end">
             <p className="commentcard__date">{moment(date).fromNow()}</p>
-            <DeleteIcon
-              commentId={id}
-              videoId={videoId}
-              setComments={setComments}
-            />
           </div>
         </div>
         <div className="commentcard__right--bottom">
