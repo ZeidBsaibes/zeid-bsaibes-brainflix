@@ -1,6 +1,6 @@
 import React from "react";
 import Player from "../../components/Player/Player";
-import Below from "../../components/Below/Below";
+import Below from "../../components/BelowFold/BelowFold";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Loading from "../../components/Loading/Loading";

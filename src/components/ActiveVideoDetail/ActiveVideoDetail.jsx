@@ -1,9 +1,9 @@
 import React from "react";
 import VideoMeta from "../VideoMeta/VideoMeta";
 import Comments from "../Comments/Comments";
-import "./BelowLeft.scss";
+import "./ActiveVideoDetail.scss";
 
-function BelowLeft({ activeVideoObject, refreshVideoObject }) {
+function ActiveVideoDetail({ activeVideoObject, refreshVideoObject }) {
   return (
     <div className="below-left">
       <VideoMeta activeVideoObject={activeVideoObject} />
@@ -16,4 +16,4 @@ function BelowLeft({ activeVideoObject, refreshVideoObject }) {
   );
 }
 
-export default BelowLeft;
+export default ActiveVideoDetail;

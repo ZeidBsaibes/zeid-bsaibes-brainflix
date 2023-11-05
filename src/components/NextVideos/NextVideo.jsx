@@ -1,9 +1,9 @@
 import React from "react";
-import "./BelowRight.scss";
+import "./NextVideo.scss";
 import VideoThumbnail from "../VideoThumbnail/VideoThumbnail";
 import { Link } from "react-router-dom";
 
-function BelowRight({ videosList, updateActiveVideo, activeVideoId }) {
+function NextVideo({ videosList, updateActiveVideo, activeVideoId }) {
   const videosExcludingActive = videosList.filter((video) => {
     return video.id !== activeVideoId;
   });
@@ -31,4 +31,4 @@ function BelowRight({ videosList, updateActiveVideo, activeVideoId }) {
   );
 }
 
-export default BelowRight;
+export default NextVideo;

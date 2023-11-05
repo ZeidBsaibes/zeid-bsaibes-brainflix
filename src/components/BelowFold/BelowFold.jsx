@@ -1,9 +1,9 @@
 import React from "react";
-import "./Below.scss";
-import BelowLeft from "../BelowLeft/BelowLeft";
-import BelowRight from "../BelowRight/BelowRight";
+import "./BelowFold.scss";
+import ActiveVideoDetail from "../ActiveVideoDetail/ActiveVideoDetail";
+import BelowRight from "../NextVideos/NextVideo";
 
-function Below({
+function BelowFold({
   activeVideoObject,
   videosList,
   activeVideoId,
@@ -11,7 +11,7 @@ function Below({
 }) {
   return (
     <div className="below">
-      <BelowLeft
+      <ActiveVideoDetail
         activeVideoObject={activeVideoObject}
         refreshVideoObject={refreshVideoObject}
       />
@@ -20,4 +20,4 @@ function Below({
   );
 }
 
-export default Below;
+export default BelowFold;

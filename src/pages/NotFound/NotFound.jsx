@@ -8,17 +8,19 @@ import HomeIcon from "../../assets/icons/home2.svg";
 
 function NotFound() {
   return (
-    <div className="lottie">
-      <Lottie
-        animationData={Animation}
-        loop={true}
-        className="lottie__animation"
-      />
-      <h1 className="lottie__title">Page Not Found</h1>
-      <Link to="/" className="lottie__button">
-        <Button text="BACK HOME" />
-      </Link>
-    </div>
+    <main>
+      <div className="lottie">
+        <Lottie
+          animationData={Animation}
+          loop={true}
+          className="lottie__animation"
+        />
+        <h1 className="lottie__title">Page Not Found</h1>
+        <Link to="/" className="lottie__button">
+          <Button text="BACK HOME" />
+        </Link>
+      </div>
+    </main>
   );
 }
 
