@@ -50,9 +50,11 @@ class BrainFlixApi {
     }
   };
 
-  postVideo = async (newVideo) => {
+  postVideo = async (formData) => {
     try {
-      const response = await axios.post(`${this.baseURL}/videos`, newVideo);
+      const response = await axios.post(`${this.baseURL}/videos`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
       return response;
     } catch (error) {
       console.error(error);

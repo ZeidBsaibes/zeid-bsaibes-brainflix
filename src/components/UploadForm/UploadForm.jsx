@@ -13,7 +13,9 @@ function UploadForm() {
   const [vidTitle, setVidTitle] = useState("");
   const [vidDescription, setVidDescription] = useState("");
   const [formErrors, setFormErrors] = useState([]);
-  const [image, setImage] = useState(null);
+  const [file, setFile] = useState(null);
+  const [previewUrl, setPreviewUrl] = useState(null);
+  const [selectedFile, setSelectedFile] = useState(null);
 
   const navigate = useNavigate();
 
@@ -30,27 +32,37 @@ function UploadForm() {
     setFormErrors([]);
 
     if (!vidTitle) {
-      setFormErrors((prev) => [...prev, "You must Add a video title"]);
+      setFormErrors((prev) => [...prev, "You must add a video title"]);
     }
 
     if (!vidDescription) {
       setFormErrors((prev) => [...prev, "You must add a video description"]);
     }
 
+    if (!file) {
+      setFormErrors((prev) => [...prev, "You must upload an image"]);
+    }
+
     if (vidTitle && vidDescription) {
-      const newVideo = {
-        title: vidTitle,
-        description: vidDescription,
-        channel: "Zeid's Channel",
-        image: "http://localhost:8080/public/images/mountains.jpg",
-        views: "0",
-        likes: "0",
-        duration: Math.floor(Math.random() * 100) + 1,
-        video: "https://project-2-api.herokuapp.com/stream",
-        comments: [],
-      };
+      const formData = new FormData();
+
+      formData.append("title", vidTitle);
+      formData.append("description", vidDescription);
+      formData.append("channel", "Zeid's Channel");
+      formData.append(
+        "image",
+        "http://localhost:8080/public/images/mountains.jpg"
+      );
+      formData.append("views", 0);
+      formData.append("likes", 0);
+      formData.append("duration", Math.floor(Math.random() * 100) + 1);
+      formData.append("video", "https://project-2-api.herokuapp.com/stream");
+      formData.append("comments", []);
+
+      formData.append("file", file);
+
       try {
-        const response = await postVideo(newVideo);
+        const response = await postVideo(formData);
         console.log(response);
         setVidTitle("");
         setVidDescription("");
@@ -58,6 +70,23 @@ function UploadForm() {
       } catch (error) {
         console.error(error);
       }
+    }
+  };
+
+  const handleAddFile = async (event) => {
+    setFile(event.target.files[0]);
+    updatePreviewThumbnail(event);
+  };
+
+  const updatePreviewThumbnail = async (event) => {
+    const preview = event.target.files[0];
+    if (preview) {
+      setSelectedFile(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreviewUrl(reader.result);
+      };
+      reader.readAsDataURL(preview);
     }
   };
 
@@ -80,12 +109,21 @@ function UploadForm() {
   if (!isUploading) {
     return (
       <div className="uploadform">
-        <form action="" className="uploadform__form">
+        <form
+          action="/videos"
+          method="post"
+          encType="multipart/form-data"
+          className="uploadform__form"
+        >
           <div className="uploadform__block--top">
             <h2 className="uploadform__label">VIDEO THUMBNAIL</h2>
             <img
               className="uploadform__placeholder"
-              src="http://localhost:8080/public/images/plane.jpg"
+              src={
+                previewUrl
+                  ? previewUrl
+                  : `http://localhost:8080/public/images/placeholder_upload_page.jpeg`
+              }
               alt="placeholder for upload thumbnail"
             />
           </div>
@@ -129,9 +167,13 @@ function UploadForm() {
               </label>
               <input
                 type="file"
-                onChange={(event) => setImage(event.target.files[0])}
+                accept="image/*"
+                filename={file}
+                name="uploaded_file"
+                onChange={(event) => handleAddFile(event)}
               />
             </div>
+
             <div className="uploadform__block--bottom">
               <div className="uploadform__buttons">
                 <div className="uploadform__button--publish">
