@@ -1,7 +1,7 @@
 import React from "react";
 import "./BelowFold.scss";
 import ActiveVideoDetail from "../ActiveVideoDetail/ActiveVideoDetail";
-import BelowRight from "../NextVideos/NextVideo";
+import NextVideo from "../NextVideos/NextVideo";
 
 function BelowFold({
   activeVideoObject,
@@ -15,7 +15,7 @@ function BelowFold({
         activeVideoObject={activeVideoObject}
         refreshVideoObject={refreshVideoObject}
       />
-      <BelowRight videosList={videosList} activeVideoId={activeVideoId} />
+      <NextVideo videosList={videosList} activeVideoId={activeVideoId} />
     </div>
   );
 }

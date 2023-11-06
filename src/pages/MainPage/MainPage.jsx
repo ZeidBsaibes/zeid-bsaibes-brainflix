@@ -1,11 +1,14 @@
 import React from "react";
 import Player from "../../components/Player/Player";
-import Below from "../../components/BelowFold/BelowFold";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Loading from "../../components/Loading/Loading";
 import fetchVideosList from "../../scripts/utils/fetch-videos-list";
 import fetchVideosFromId from "../../scripts/utils/fetch-videos-detail";
+import ActiveVideoDetail from "../../components/ActiveVideoDetail/ActiveVideoDetail";
+
+import NextVideo from "../../components/NextVideos/NextVideo";
+import BelowFold from "../../components/BelowFold/BelowFold";
 
 function MainPage() {
   const { videoId } = useParams();
@@ -46,11 +49,10 @@ function MainPage() {
             <Player activeVideoObject={activeVideoObject} />
           </section>
           <section>
-            <Below
+            <BelowFold
+              activeVideoId={activeVideoId}
               activeVideoObject={activeVideoObject}
               videosList={videosList}
-              activeVideoId={activeVideoId}
-              refreshVideoObject={getAndSetVideoObject}
             />
           </section>
         </main>
